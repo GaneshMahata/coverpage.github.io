@@ -1,0 +1,6 @@
+{
+  "name": "InternReport Builder",
+  "description": "Generate and customize professional internship report cover pages and front pages instantly with interactive styling, logos, and PDF export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

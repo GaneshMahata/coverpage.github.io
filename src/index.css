@@ -1,0 +1,90 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom Web Fonts applied dynamically in component inline styles */
+
+/* A4 Print and Styling Classes */
+.a4-container {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+/* High-fidelity printing style rules to ensure beautiful physical copies or browser-native PDFs */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Hide all UI controls during print */
+  header, 
+  aside, 
+  nav, 
+  button, 
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Make the print container fill the full screen perfectly */
+  .print-page-target {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    transform: none !important;
+    overflow: hidden !important;
+    page-break-after: always !important;
+  }
+
+  /* Force standard portrait page dimensions */
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Grid overlay behind the A4 canvas */
+.grid-bg {
+  background-size: 20px 20px;
+  background-image: linear-gradient(to right, rgba(226, 232, 240, 0.35) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(226, 232, 240, 0.35) 1px, transparent 1px);
+}
